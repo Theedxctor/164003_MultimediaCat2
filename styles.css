@@ -68,6 +68,8 @@ body {
 #wildlife-video {
     width: 100%;
     max-width: 100%;
+    max-height: 55vh;
+    object-fit: cover;
     border-radius: 0.75rem;
     outline: none;
     background: #000;
