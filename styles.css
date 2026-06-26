@@ -1,0 +1,201 @@
+/* ============================================
+   Save Our Wildlife – Stylesheet
+   Demonstrates accessibility & responsive design
+   ============================================ */
+
+/* ---------- CSS Reset & Base ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%; /* Respects user browser font-size preferences (accessibility) */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f1b0e;
+    color: #e8e8e8;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* ---------- Skip-to-content link (Accessibility) ---------- */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: #2e7d32;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    z-index: 1000;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 0 0 0.5rem 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ---------- Container ---------- */
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: linear-gradient(145deg, #1a2e1a, #142214);
+    border: 1px solid rgba(46, 125, 50, 0.3);
+    border-radius: 1rem;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Heading ---------- */
+#page-heading {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #66bb6a;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+}
+
+/* ---------- Video ---------- */
+#video-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#wildlife-video {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0.75rem;
+    outline: none;
+    background: #000;
+}
+
+/* Focus styles for keyboard navigation (accessibility) */
+#wildlife-video:focus-visible {
+    outline: 3px solid #66bb6a;
+    outline-offset: 3px;
+}
+
+/* Hidden state applied by JS */
+#wildlife-video.hidden {
+    display: none;
+}
+
+/* ---------- Video Description ---------- */
+#video-description {
+    margin-top: 1.25rem;
+    font-size: 1.05rem;
+    color: #c8e6c9;
+    text-align: center;
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+/* ---------- Controls ---------- */
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.75rem;
+}
+
+#toggle-video-btn {
+    background: #2e7d32;
+    color: #ffffff;
+    border: none;
+    padding: 0.85rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+    letter-spacing: 0.03em;
+}
+
+#toggle-video-btn:hover {
+    background: #388e3c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(46, 125, 50, 0.4);
+}
+
+#toggle-video-btn:focus-visible {
+    outline: 3px solid #a5d6a7;
+    outline-offset: 3px;
+}
+
+#toggle-video-btn:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   Responsive Design (4 marks)
+   ============================================ */
+
+/* --- Tablets & smaller desktops --- */
+@media (max-width: 768px) {
+    #page-heading {
+        font-size: 1.75rem;
+    }
+
+    .container {
+        padding: 2rem 1.25rem;
+        border-radius: 0.75rem;
+    }
+
+    #video-description {
+        font-size: 0.95rem;
+    }
+}
+
+/* --- Mobile phones --- */
+@media (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    #page-heading {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    #toggle-video-btn {
+        width: 100%;
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+
+    #video-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* --- Prefers reduced motion (accessibility) --- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* --- High-contrast / forced-colors mode (accessibility) --- */
+@media (forced-colors: active) {
+    #toggle-video-btn {
+        border: 2px solid ButtonText;
+    }
+}

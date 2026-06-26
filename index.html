@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Save Our Wildlife – Join the conservation effort to protect endangered species and preserve natural habitats for future generations.">
+    <title>Save Our Wildlife | Conservation Awareness</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip navigation link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="container">
+        <!-- Page Heading (2 marks) -->
+        <h1 id="page-heading">Save Our Wildlife</h1>
+
+        <!-- Video Section (4 marks) -->
+        <section id="video-section" aria-labelledby="page-heading">
+            <figure id="video-figure">
+                <video
+                    id="wildlife-video"
+                    controls
+                    preload="metadata"
+                    aria-label="Wildlife conservation promotional video"
+                    poster="https://images.unsplash.com/photo-1474511320723-9a56873571b7?w=900&h=500&fit=crop"
+                >
+                    <source src="wildlife.mp4" type="video/mp4">
+                    <!-- Fallback text for browsers that do not support the video element -->
+                    Your browser does not support the HTML5 video element.
+                    <a href="wildlife.mp4" download>Download the video</a> instead.
+                </video>
+
+                <!-- Short description below the video (2 marks) -->
+                <figcaption id="video-description">
+                    Every day, countless species face the threat of extinction due to habitat
+                    destruction, poaching, and climate change. Watch this short film to learn how
+                    you can make a difference and help protect the incredible wildlife that shares
+                    our planet.
+                </figcaption>
+            </figure>
+        </section>
+
+        <!-- Toggle / Play button (3 marks) -->
+        <div class="controls">
+            <button
+                id="toggle-video-btn"
+                type="button"
+                aria-controls="wildlife-video"
+                aria-label="Hide or play the wildlife video"
+            >
+                ▶ Play Video
+            </button>
+        </div>
+    </main>
+
+    <!-- JavaScript file linked separately -->
+    <script src="script.js"></script>
+</body>
+</html>
